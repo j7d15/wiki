@@ -1,51 +1,71 @@
+import React from 'react';
 import clsx from 'clsx';
-import Heading from '@theme/Heading';
 import styles from './styles.module.css';
 
 const FeatureList = [
   {
-    title: 'Easy to Use',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    title: 'git',
+    slug: '/wiki/memento/category/git',
+    Svg: require('@site/static/img/computer-icon.svg').default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        Git est un logiciel de gestion de versions.
       </>
-    ),
+    )
   },
   {
-    title: 'Focus on What Matters',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    title: 'SQL',
+    slug: '/wiki/memento/category/sql',
+    Svg: require('@site/static/img/computer-icon.svg').default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        Le SQL est un langage permettant de communiquer avec une base de données.
       </>
-    ),
+    )
   },
   {
-    title: 'Powered by React',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    title: 'Linux',
+    slug: '/wiki/memento/category/linux',
+    Svg: require('@site/static/img/computer-icon.svg').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Linux est un système d'exploitation Open Source et gratuit, distribué sous licence publique générale GNU. 
       </>
-    ),
+    )
   },
+  {
+    title: 'PHP',
+    slug: '/wiki/memento/category/php',
+    Svg: require('@site/static/img/computer-icon.svg').default,
+    description: (
+      <>
+        PHP (officiellement, ce sigle est un acronyme récursif pour PHP Hypertext Preprocessor) est un langage de scripts généraliste et Open Source, spécialement conçu pour le développement d'applications web.
+      </>
+    )
+  },
+  {
+    title: 'JavaScript',
+    slug: '/wiki/memento/category/javascript',
+    Svg: require('@site/static/img/computer-icon.svg').default,
+    description: (
+      <>
+        JavaScript (souvent abrégé en « JS ») est un langage de script léger, orienté objet, principalement connu comme le langage de script des pages web.
+      </>
+    )
+  }
 ];
 
-function Feature({Svg, title, description}) {
+function Feature({Svg, title, slug, description}) {
   return (
-    <div className={clsx('col col--4')}>
+    <a href={slug} className={clsx('col col--4')}>
       <div className="text--center">
         <Svg className={styles.featureSvg} role="img" />
       </div>
       <div className="text--center padding-horiz--md">
-        <Heading as="h3">{title}</Heading>
+        <h3>{title}</h3>
         <p>{description}</p>
       </div>
-    </div>
+    </a>
   );
 }
 
